@@ -1,0 +1,15 @@
+.container p{
+    color:#dc143c;
+}
+
+.container > p{
+    font-size: 28px;
+}
+
+#section2 + *{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#section2 ~ *:not(article){
+    border: 1px solid;
+}

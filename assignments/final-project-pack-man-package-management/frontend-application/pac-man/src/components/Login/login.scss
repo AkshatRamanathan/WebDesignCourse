@@ -1,0 +1,18 @@
+$app-bg-color: #f7f7f7;
+$container-bg-color: white;
+$border-color: #ccc;
+
+.Login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: $app-bg-color;
+}
+
+.login-container {
+  border: 1px solid $border-color;
+  padding: 20px;
+  text-align: center;
+  background-color: $container-bg-color;
+}

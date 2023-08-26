@@ -1,0 +1,20 @@
+@use 'variables';
+
+@mixin center-align {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin button-style {
+    padding: $padding-medium $padding-large;
+    background-color: $primary-color;
+    color: #fff;
+    border: none;
+    border-radius: $border-radius;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $secondary-color;
+    }
+}

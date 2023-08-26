@@ -1,0 +1,22 @@
+[
+    {
+        "package": {
+            "from": {
+                "name": "John Doe",
+                "email": "jd@jd.com",
+                "address": "user address",
+                "password": "pass123",
+                "userType": "CUSTOMER"
+            },
+            "toName": "test",
+            "toAddress": "123 test",
+            "dimension": {
+                "length": "23.2",
+                "breadth": "12.4",
+                "height": "45.2"
+            },
+            "packageType": "DOCUMENT"
+        },
+        "serviceType": "EXPRESS"
+    }
+]

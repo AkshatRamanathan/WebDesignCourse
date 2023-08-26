@@ -1,0 +1,169 @@
+h3
+{
+  margin-left: 350px;
+}
+.track-shipment {
+  .shipment-list {
+    border: 1px solid #ddd;
+    border-radius: 0.25em;
+    padding: 1em;
+  }
+
+  .track-form {
+    margin-top: 2em;
+
+    .form-group {
+      margin-bottom: 1em;
+    }
+
+    button {
+      margin-right: 1em;
+    }
+  }
+
+  .status-card {
+    margin-top: 2em;
+    height: 200px;
+    overflow-y: auto;
+
+    .status-layer {
+      padding: 0.5em 0;
+      border-bottom: 1px solid #ddd;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  // other styles
+}
+
+.shipments {
+
+  .leftShipments {
+    border: 1px solid #ccc;
+
+    .tit {
+      margin-top: 20px;
+      font-size: 20px;
+      padding-left: 10px;
+      line-height: 50px;
+      border: 1px solid #ccc;
+    }
+
+    ul,
+    li {
+      list-style: none;
+      margin: 0;
+      padding: 9;
+    }
+
+    ul {
+      li {
+        font-size: 16px;
+        line-height: 40px;
+        text-align: left;
+      }
+    }
+  }
+
+  // #cancel {
+  //   display: block;
+  //   width: 30%;
+  // }
+
+  .rightShopments {
+    .btn-group {
+      //display: flex;
+      position: relative;
+      display: inline-flex;
+      vertical-align: middle;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+
+      // .btn {
+      //   flex-grow: 1;
+      // }
+      
+
+
+    }
+    // .btn-success
+    //   {
+    //     width: 50%;
+    //   }
+
+    .linebox {
+      margin-bottom: 30px;
+      align-items: end;
+
+      .ball {
+        font-size: 14px;
+        line-height: 30px;
+        text-align: center;
+        color: #666;
+
+        i {
+          margin: auto;
+          width: 20px;
+          height: 20px;
+          //display: block;
+          border-radius: 50%;
+          background-color: #666;
+        }
+      }
+
+      .line {
+        border-top: 2px solid #666;
+
+      }
+    }
+
+    .card-text {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+  }
+}
+.progress-bar {
+  width: 100%;
+  background-color: #ccc;
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.in-transit {
+  height: 100%;
+  width: 75%;
+  background-color: #0bc8e9;
+  transition: width 0.3s ease-in-out;
+}
+
+.created {
+  height: 100%;
+  width: 25%;
+  background-color: #4caf50;
+  transition: width 0.3s ease-in-out;
+}
+.cancelled {
+  height: 100%;
+  width: 100%;
+  background-color: #f7390a;
+  transition: width 0.3s ease-in-out;
+}
+.pickedup {
+  height: 100%;
+  width: 50%;
+  background-color: #f70ad0;
+  transition: width 0.3s ease-in-out;
+}
+.delivered {
+  height: 100%;
+  width: 100%;
+  background-color: #2196f3;
+  transition: width 0.3s ease-in-out;
+}

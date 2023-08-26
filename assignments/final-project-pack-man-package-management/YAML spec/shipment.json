@@ -1,0 +1,26 @@
+[
+    {
+        "package": {
+            "from": {
+                "name": "John Doe",
+                "email": "jd@jd.com",
+                "address": "user address",
+                "password": "pass123",
+                "userType": "CUSTOMER"
+            },
+            "toName": "test",
+            "toAddress": "123 test",
+            "dimension": {
+                "length": "23.2",
+                "breadth": "12.4",
+                "height": "45.2"
+            },
+            "packageType": "DOCUMENT"
+        },
+        "cost": 234.2,
+        "duration": 23.4,
+        "trackingId": 23432343234,
+        "status": "CREATED",
+        "serviceType": "EXPRESS"
+    }
+]

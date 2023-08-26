@@ -1,0 +1,235 @@
+@use 'variables';
+@use '_mixin';
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+// Navigation Bar
+header {
+    background-color: $primary-color;
+    padding: $padding-medium;
+
+    #nav-bar {
+        position: fixed;
+
+        display: flex;
+        align-items: center;
+
+        img {
+            max-width: 40px;
+        }
+
+        nav {
+            ul {
+                display: flex;
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+
+                li {
+                    margin-right: $padding-medium;
+
+                    a {
+                        color: #fff;
+                        text-decoration: none;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Home Section
+#home-section {
+    @include center-align;
+
+    .content-left {
+        header {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        p {
+            margin-top: $padding-medium;
+        }
+
+        ul {
+            display: flex;
+            list-style-type: none;
+            margin-top: $padding-large;
+
+            li {
+                margin-right: $padding-medium;
+
+                button {
+                    @include button-style;
+                }
+            }
+        }
+    }
+
+    .image-right {
+        img {
+            max-width: 300px;
+        }
+    }
+}
+
+// About Me section
+#about-section {
+    @include center-align;
+
+    .content-wrapper {
+        display: flex;
+
+        .image-left {
+            img {
+                width: 400px;
+            }
+        }
+
+        .content-right {
+            h6 {
+                font-size: 20px;
+                font-weight: bold;
+                margin-bottom: $padding-medium;
+            }
+
+            header {
+                font-weight: bold;
+            }
+
+            p {
+                margin-top: $padding-medium;
+                margin-bottom: $padding-medium;
+            }
+
+            button {
+                @include button-style;
+            }
+        }
+    }
+
+    .statistical-data {
+        display: flex;
+        margin-top: $padding-large;
+
+        @for $i from 1 through 3 {
+            .progress-bar:nth-child(#{$i}) {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-right: $padding-large;
+
+                .progress-circle {
+                    width: 200px;
+                    height: 200px;
+
+                    .bg-circle {
+                        fill: none;
+                        stroke: #eee;
+                        stroke-width: 20;
+                    }
+
+                    .progress {
+                        fill: none;
+                        stroke: $primary-color;
+                        stroke-width: 20;
+                        stroke-dasharray: 0, 565;
+                        stroke-linecap: round;
+                    }
+                }
+
+                .percentage {
+                    text-align: center;
+                    margin-top: $padding-medium;
+
+                    br {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Services section
+#services-section {
+    @include center-align;
+
+    h6 {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: $padding-medium;
+    }
+
+    .service-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: $padding-medium;
+        margin: $padding-large;
+        background-color: #f5f5f5;
+        border-radius: $border-radius;
+
+        img {
+            max-width: 100px;
+        }
+
+        p {
+            text-align: center;
+            margin-top: $padding-medium;
+        }
+    }
+}
+
+// Contact section
+#contact-section {
+    @include center-align;
+
+    h6 {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: $padding-medium;
+    }
+
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: $padding-large;
+
+        input,
+        textarea {
+            width: 100%;
+            padding: $padding-medium;
+            margin-bottom: $padding-medium;
+            border-radius: $border-radius;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            @include button-style;
+        }
+    }
+}
+
+// Footer section
+footer {
+    background-color: $primary-color;
+    padding: $padding-medium;
+    color: #fff;
+    text-align: center;
+
+    p {
+        margin: 0;
+    }
+}

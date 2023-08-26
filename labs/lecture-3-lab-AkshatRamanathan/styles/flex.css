@@ -1,0 +1,34 @@
+.nav-bar{
+    background-color: brown;
+    width: 100%;
+    margin: 0px;
+}
+
+body{
+    padding: 0px;
+    margin: 0px;
+}
+
+.nav-bar > ul{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.nav-bar > ul > li{
+    list-style-type: none;
+}
+
+.nav-bar > ul > li > a{
+    text-decoration: none;
+}
+
+.fluid-container{
+    display: flex;
+}
+
+.fluid-container >article{
+    overflow: scroll;
+    width: 600px;
+    height: 600px;
+}

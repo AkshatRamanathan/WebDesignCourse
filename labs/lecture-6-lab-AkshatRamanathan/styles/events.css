@@ -1,0 +1,15 @@
+.box {
+    width: 80%;
+    margin: auto;
+    height: 80%;
+    border: 1px solid #526d88;
+    padding: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: rgba(196, 141, 23, 0.2);
+}
+
+.box:hover {
+    cursor: pointer;
+    background-color: rgba(196, 141, 23, 0.3);
+}

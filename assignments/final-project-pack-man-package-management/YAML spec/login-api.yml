@@ -1,0 +1,107 @@
+openapi: 3.0.0
+info:
+  title:  Login API
+  description: API for user login
+  version: "1.0"
+paths:
+  /login:
+    post:
+      summary: user login
+      description: Authenticates  user and generates access token.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserLogin"
+            examples:
+              example1:
+                value:
+                  userName: admin
+                  password: admin123
+      responses:
+        '200':
+          description: Successful login
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserCredentials"
+              examples:
+                example1:
+                  value:
+                    userName: admin
+                    address: 123 king st, Toronto
+                    email : user@gmail.com
+                    userType : ADMIN
+                    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjIxMzM2OTQ5LCJleHAiOjE2MjEzMzc1NDl9.V-7bEMOb3DugpMyfttiW9amQFVvlQ9Wmig_1iVBKxwg
+        '401':
+          description: Unauthorized access
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+              examples:
+                example1:
+                  value:
+                    message: Invalid username or password
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+              examples:
+                example1:
+                  value:
+                    message: An internal server error occurred
+components:
+  schemas:
+    UserLogin:
+      type: object
+      properties:
+        userName:
+          type: string
+          description: user username
+          example: admin
+        password:
+          type: string
+          description: user password
+          example: admin1234
+    UserCredentials:
+      type: object
+      properties:
+        userName:
+          type: string
+          description: user username
+          example: admin
+        password:
+          type: string
+          description: user password
+          example: admin1234
+        address:
+          type: string
+          description: user address
+          example: 123 king st, Toronto
+        email:
+          type: string
+          description: user email
+          example: user@gmail.com
+        userType:
+          type: string
+          description: user is admin or customer
+          example: ADMIN
+        token:
+          type: string
+          description: token returned from backend for auth
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjIxMzM2OTQ5LCJleHAiOjE2MjEzMzc1NDl9.V-7bEMOb3DugpMyfttiW9amQFVvlQ9Wmig_1iVBKxwg
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: the error system code
+          example: 401
+        message:
+          type: string
+          description: the error message
+          example: check your username and password

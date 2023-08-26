@@ -1,0 +1,27 @@
+{
+  "name": "assignment-6-akshatramanathan",
+  "version": "1.0.0",
+  "description": "reminders app in vanilla js and SASS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "npx sass scss/index.scss styles/index.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neu-mis-info-6150-summer-2023/assignment-6-AkshatRamanathan.git"
+  },
+  "keywords": [
+    "SASS",
+    "JS"
+  ],
+  "author": "Akshat Ramanathan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/neu-mis-info-6150-summer-2023/assignment-6-AkshatRamanathan/issues"
+  },
+  "homepage": "https://github.com/neu-mis-info-6150-summer-2023/assignment-6-AkshatRamanathan#readme",
+  "dependencies": {
+    "sass": "^1.63.4"
+  }
+}

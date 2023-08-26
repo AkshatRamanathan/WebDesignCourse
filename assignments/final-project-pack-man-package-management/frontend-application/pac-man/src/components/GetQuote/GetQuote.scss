@@ -1,0 +1,29 @@
+.get-quotation-container {
+    background-color: #f6e58d; // Pastel yellow/orange color
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  
+    .form-group {
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+  
+    .quotation-table {
+      margin-top: 20px;
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+  
+      th,
+      td {
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+  
+      th {
+        background-color: #f2f2f2;
+      }
+    }
+  }
+  

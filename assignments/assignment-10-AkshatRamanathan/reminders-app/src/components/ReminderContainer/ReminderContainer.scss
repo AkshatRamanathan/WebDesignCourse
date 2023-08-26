@@ -1,0 +1,8 @@
+//card container in the main container
+.flex-container {
+    // for the cards
+    display: flex;
+    padding-left: 20px;
+    flex-wrap: wrap;
+    gap: 40px;
+}

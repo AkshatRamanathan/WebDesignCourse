@@ -1,0 +1,27 @@
+{
+  "name": "assignment-10-akshatramanathan",
+  "version": "1.0.0",
+  "description": "reactJS, nodeJS, reminders app, MongoDB, MERN",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neu-mis-info-6150-summer-2023/assignment-10-AkshatRamanathan.git"
+  },
+  "keywords": [
+    "reactJS",
+    "nodeJS",
+    "reminders",
+    "app",
+    "MongoDB",
+    "MERN"
+  ],
+  "author": "AkshatRamanathan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/neu-mis-info-6150-summer-2023/assignment-10-AkshatRamanathan/issues"
+  },
+  "homepage": "https://github.com/neu-mis-info-6150-summer-2023/assignment-10-AkshatRamanathan#readme"
+}

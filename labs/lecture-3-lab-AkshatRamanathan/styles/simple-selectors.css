@@ -1,0 +1,15 @@
+#title{
+    color:blueviolet;
+}
+
+.content{
+    width: 10px;
+}
+
+p{
+    color:brown;
+}
+
+*{
+    padding: 10px;
+}

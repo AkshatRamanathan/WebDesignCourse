@@ -1,0 +1,9 @@
+[
+    {
+        "name": "John Doe",
+        "email": "jd@jd.com",
+        "address": "user address",
+        "password": "pass123",
+        "userType": "CUSTOMER"
+    }
+]

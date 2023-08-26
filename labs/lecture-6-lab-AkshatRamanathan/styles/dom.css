@@ -1,0 +1,15 @@
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.article {
+    width: 300px;
+    height: 200px;
+    overflow: scroll;
+    border: 1px solid #4d545c;
+    border-radius: 3px;
+    cursor: pointer;
+
+}

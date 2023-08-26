@@ -1,0 +1,26 @@
+$app-bg-color: #fc8403;
+$container-bg-color: white;
+$border-color: #ccc;
+
+h3 {
+    margin-top: 15px;
+
+}
+
+.carousel {
+    width: 500px;
+    margin: 10px;
+}
+
+#navbar-nav {
+    text-align: center;
+    width: 100%;
+
+    .navbar-nav {
+        width: 100%;
+
+        .nav-item {
+            flex-grow: 1;
+        }
+    }
+}

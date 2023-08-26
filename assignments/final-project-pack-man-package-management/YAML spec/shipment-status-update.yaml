@@ -1,0 +1,148 @@
+
+openapi: '3.0.0'
+info:
+  title: Shipment status updation
+  version: '1.0'
+paths:
+  /api/shipment/changestatus/{trackingId}:
+    put:
+      summary: Update shipment status
+      description: Updates the status of a specific shipment.
+      parameters:
+      - name: trackingId
+        in: path
+        description: The ID of the shipment to update.
+        required: true
+        schema:
+          type: number
+      requestBody:
+        description: The updated shipment status.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ShipmentStatus'
+      responses:
+        '200':
+          description: Status udpated successfully
+        '400':
+          description: Invalid request. The request body is missing or malformed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Shipment not found. The specified shipmentId does not exist.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        name:
+          type: string
+          description: name of User
+          example: user's name
+        email:
+          type: string
+          description: email of user
+          example: user@name.com
+        address:
+          type: string
+          description: address of user
+          example: 123 test road
+        password:
+          type: string
+          description: password of user
+          example: uYbudisdjbnasi
+        userType:
+          type: string
+          description: type of user
+          example: CUSTOMER
+    Package:
+      type: object
+      properties:
+        from:
+          type: object
+          description: user this package belongs to
+          $ref: '#/components/schemas/User'
+        toName:
+          type: string
+          description: Reciever's name
+          example: Jane Doe
+        toAddress:
+          type: string
+          description: Reciever's address
+          example: 148 hill, Boston
+        dimension:
+          type: object
+          properties:
+            length:
+              type: number
+              description: length of package
+              example: 12.2
+            breadth:
+              type: number
+              description: breadth of package
+              example: 2.3
+            height:
+              type: number
+              description: height of package
+              example: 12
+        packageType:
+          type: string
+          description: type of package
+          example: DOCUMENT
+    ShipmentStatus:
+      type: object
+      properties:
+        trackingId:
+          type: number
+          description: shipment ID for updating status
+          example: 234234234
+        status:
+          type: string
+          description: status of the shipment
+          example: CREATED
+    Shipment:
+      type: object
+      properties:
+        package:
+          type: object
+          description: package of the shipment
+          $ref: '#/components/schemas/Package'
+        cost:
+          type: number
+          description: cost of the shipment
+          example: 234.5
+        duration:
+          type: number
+          description: time taken for delivery (in days)
+          example: 23.9
+        trackingId:
+          type: number
+          description: tracking ID of the shipment
+          example: 2342342245
+        status:
+          type: string
+          description: status of the shipment
+          example: CREATED
+        serviceType:
+          type: string
+          description: type of service of shipment
+          example: EXPRESS
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+      example:
+        code: 400
+        message: "Status not updated"

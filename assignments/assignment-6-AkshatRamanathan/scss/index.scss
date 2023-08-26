@@ -1,0 +1,129 @@
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 2% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    font-size: large;
+    /* Could be more or less, depending on screen size */
+}
+
+// modal container outer later
+.modal {
+    display: none; //on js click change to block
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+
+        &:hover,
+        &:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+
+}
+
+// button styles for update and submit
+.btn {
+    appearance: button;
+    backface-visibility: hidden;
+    background-color: #405cf5;
+    border-radius: 6px;
+    border-width: 0;
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .1) 0 2px 5px 0, rgba(0, 0, 0, .07) 0 1px 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    height: 44px;
+    margin: 12px 0 0;
+    outline: none;
+    overflow: hidden;
+    padding: 0 25px;
+    text-align: center;
+    text-transform: none;
+    transform: translateZ(0);
+    transition: all .2s, box-shadow .08s ease-in;
+    user-select: none;
+    // -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 100%;
+}
+
+// overall app styling. grid container
+body {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 5px;
+    grid: "panel mainContainer" 100% / 5% 95%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+//right main container grid
+#mainContainer {
+    grid-area: mainContainer;
+}
+
+//card container in the main container
+.flex-container {
+    // for the cards
+    display: flex;
+    padding-left: 20px;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+// left main container grid
+#panel {
+    grid-area: panel;
+    background-color: #e2f2da;
+    align-items: center;
+}
+
+// add button styling fix
+#add-reminder {
+    font-size: 48px;
+    font-weight: bold;
+    padding: 20px 2px 2px 15px;
+    cursor: pointer;
+}
+
+// add button container
+#header {
+    font-size: 30px;
+    padding-left: 10px;
+}
+
+// card styling for remainders
+.card {
+    width: 350px;
+    height: 400px;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 10px;
+    box-shadow: 0 0.5rem 1rem rgb(0, 0, 0, 0.4);
+}

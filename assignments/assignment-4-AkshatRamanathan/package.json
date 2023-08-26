@@ -1,0 +1,26 @@
+{
+  "name": "assignment-4-akshatramanathan",
+  "version": "1.0.0",
+  "description": "SASS and CSS flexbox, grid layout styling",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "npx sass scss/main.scss dist/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neu-mis-info-6150-summer-2023/assignment-4-AkshatRamanathan.git"
+  },
+  "keywords": [
+    "SASS"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/neu-mis-info-6150-summer-2023/assignment-4-AkshatRamanathan/issues"
+  },
+  "homepage": "https://github.com/neu-mis-info-6150-summer-2023/assignment-4-AkshatRamanathan#readme",
+  "dependencies": {
+    "sass": "^1.62.1"
+  }
+}

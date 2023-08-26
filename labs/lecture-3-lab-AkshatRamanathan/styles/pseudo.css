@@ -1,0 +1,25 @@
+p:hover{
+    background-color: blue;
+    cursor: pointer;
+}
+
+p::first-letter{
+    font-size: 28px;
+}
+
+p::selection{
+    background-color: yellowgreen;
+}
+
+h1,p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.box{
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    width: 400px;
+    height: 400px;
+    overflow: scroll;
+}

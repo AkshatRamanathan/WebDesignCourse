@@ -1,0 +1,68 @@
+{
+    "login": {
+        "username": "Username",
+        "password": "Password"
+
+    },
+    "home": {
+        "login": "Login",
+        "signup": "Sign-Up",
+        "about": "An application for users to create shipments, track their packages. In this applications the users have a dashboard to login into where they can create and add details of their packages, based on which get quotations for the shipment they want to create. The price is generated based on the dimensions of the package and the distance to destination. The customers can also manage and track their package once they create the shipment. The application also provides an Admin dashboard where the admins can change the status of the shipments and manage the package details (request foer delivery, cancel, generate tracking ID, etc.)"
+
+    },
+    "footer": {
+        "thankyou": "Thank you for using our application",
+        "learnmore": "To Learn more about the application please visit"
+    },
+    "shipments": {
+        "myshipment": "My Shipments",
+        "details": "Shipment Details",
+        "new": "Create New Shipment",
+        "create": "Create Shipment"
+    },
+    "tracking": {
+        "id": "Tracking ID",
+        "cost": "Cost",
+        "status": "Status",
+        "time": "Travel Time"
+    },
+    "package": {
+        "from": "Recipient Name",
+        "address": "Recipient Address",
+        "type": "Package Type",
+        "food": "Food",
+        "doc": "Document",
+        "other": "Other",
+        "len": "Package length",
+        "breadth": "Package breadth",
+        "height": "Package height",
+        "details": "Additional Details"
+
+    },
+    "dashboard": {
+        "track": "Track Shipment",
+        "quote": "Get Quote",
+        "search": "Search",
+        "title": "Dashboard"
+    },
+    "quote": {
+        "amount": "Amount",
+        "base": "Base cost",
+        "tax": "Tax",
+        "delivery": "Delivery cost",
+        "total": "Total",
+        "weight": "Weight"
+    },
+    "profile": {
+        "title": "My profile",
+        "new": "New Password (7 characters)",
+        "confirm": "Confirm New Password",
+        "save": "Save changes"
+    },
+    "error": {
+        "notfound": "Oops! The link you are looking for does not exist. Are you sure you are at the right place???",
+        "redirect": "Redirecting you to homepage in"
+    }
+
+
+}

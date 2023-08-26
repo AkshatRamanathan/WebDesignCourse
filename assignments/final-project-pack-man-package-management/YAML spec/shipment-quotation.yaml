@@ -1,0 +1,139 @@
+openapi: 3.0.0
+info:
+  title: Shipment Quotation API
+  description: To get quotation for a shipment 
+  version: 1.0.0
+
+paths:
+  /api/shipment/getquote/:
+    get:
+      summary: Get shipment quotation
+      description: Get shipment quotation based on package details and service type.
+      requestBody:
+        description: The package with required service type.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Request'
+      responses:
+        '200':
+          description: Shipment information successfully updated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Shipment'
+        '500':
+          description: Invalid request. The request body is missing or malformed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    Request:
+      type: object
+      properties:
+        Package:
+          type: object
+          description: user this package belongs to
+          $ref: '#/components/schemas/Package'
+        serviceType:
+          type: string
+          description: type of service of shipment
+          example: EXPRESS
+    User:
+      type: object
+      properties:
+        name:
+          type: string
+          description: name of User
+          example: user's name
+        email:
+          type: string
+          description: email of user
+          example: user@name.com
+        address:
+          type: string
+          description: address of user
+          example: 123 test road
+        password:
+          type: string
+          description: password of user
+          example: uYbudisdjbnasi
+        userType:
+          type: string
+          description: type of user
+          example: CUSTOMER
+    Package:
+      type: object
+      properties:
+        from:
+          type: object
+          description: user this package belongs to
+          $ref: '#/components/schemas/User'
+        toName:
+          type: string
+          description: Reciever's name
+          example: Jane Doe
+        toAddress:
+          type: string
+          description: Reciever's address
+          example: 148 hill, Boston
+        dimension:
+          type: object
+          properties:
+            length:
+              type: number
+              description: length of package
+              example: 12.2
+            breadth:
+              type: number
+              description: breadth of package
+              example: 2.3
+            height:
+              type: number
+              description: height of package
+              example: 12
+        packageType:
+          type: string
+          description: type of package
+          example: DOCUMENT
+    Shipment:
+      type: object
+      properties:
+        package:
+          type: object
+          description: package of the shipment
+          $ref: '#/components/schemas/Package'
+        cost:
+          type: number
+          description: cost of the shipment
+          example: 234.5
+        duration:
+          type: number
+          description: time taken for delivery (in days)
+          example: 23.9
+        trackingId:
+          type: number
+          description: tracking ID of the shipment
+          example: 2342342245
+        status:
+          type: string
+          description: status of the shipment
+          example: CREATED
+        serviceType:
+          type: string
+          description: type of service of shipment
+          example: EXPRESS
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+      example:
+        code: 500
+        message: "Package not found"

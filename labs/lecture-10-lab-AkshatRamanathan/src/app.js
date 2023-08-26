@@ -1,0 +1,11 @@
+import express from "express";
+import cors from 'cors';
+import mongoose from "mongoose";
+import registerRoutes from "./routes/index.js";
+const app = express();
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+registerRoutes(app);
+mongoose.connect('mongodb://localhost:27017/coursecatalog');
+export default app;

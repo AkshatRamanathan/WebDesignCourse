@@ -1,0 +1,7 @@
+[
+    {
+        "_comment": "no input requestbody hence this is the output given based on the trackingId sent",
+        "trackingId": 324234234234,
+        "status": "CREATED"
+    }
+]

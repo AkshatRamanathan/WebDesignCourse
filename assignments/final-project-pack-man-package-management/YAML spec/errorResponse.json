@@ -1,0 +1,6 @@
+[
+    {
+        "code": "401",
+        "message": "user is not authenticated"
+    }
+]

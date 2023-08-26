@@ -1,0 +1,23 @@
+{
+  "name": "lecture-4-lab-akshatramanathan",
+  "version": "1.0.0",
+  "description": "css and sass",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "npx sass scss/main.scss dist/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neu-mis-info-6150-summer-2023/lecture-4-lab-AkshatRamanathan.git"
+  },
+  "author": "AkshatRamanathan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/neu-mis-info-6150-summer-2023/lecture-4-lab-AkshatRamanathan/issues"
+  },
+  "homepage": "https://github.com/neu-mis-info-6150-summer-2023/lecture-4-lab-AkshatRamanathan#readme",
+  "dependencies": {
+    "sass": "^1.62.1"
+  }
+}

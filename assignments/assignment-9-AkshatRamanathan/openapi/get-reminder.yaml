@@ -1,0 +1,215 @@
+openapi: "3.0.2"
+info:
+  title: GET reminders data
+  version: "1.0"
+servers:
+  - url: http://localhost:3001/
+paths:
+  /reminder:
+    post:
+      summary: POST a new reminder
+      requestBody:
+        description: The new reminder object.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Reminder"
+      responses:
+        "200":
+          description: OK
+        "500":
+          description: Invalid request. The request body is missing or malformed.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    get:
+      summary: GET all reminders list
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Reminders"
+        "500":
+          description: Invalid request. The request body is missing or malformed.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /reminder/{id}:
+    delete:
+      summary: delete reminder with given id
+      description: delete reminder with given id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: reminder ID
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+        "500":
+          description: Invalid request. The request is missing or malformed.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+    put:
+      summary: Update existing reminder
+      description: Updates the existing reminder details.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: reminder ID
+          schema:
+            type: string
+      requestBody:
+        description: The reminder is updated with modified details.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Reminder"
+      responses:
+        "200":
+          description: OK
+        "500":
+          description: Invalid request. The request body is missing or malformed.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    get:
+      summary: GET all reminders list or filtered list based on query params
+      description: GET all reminders list or filtered list based on query params
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: reminder ID
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Reminder"
+        "500":
+          description: Invalid request. The request body is missing or malformed.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /reminder/range:
+    get:
+      summary: GET filtered data based on date range
+      description: GET filtered data based on date range
+      parameters:
+        - name: createdDateFrom
+          in: query
+          required: true
+          description: Created date from field (range start)
+          schema:
+            type: string
+            format: date-time
+            example: 2023-01-15:00:00:00+00
+        - name: createdDateTo
+          in: query
+          required: true
+          description: Created date to field (range end)
+          schema:
+            type: string
+            format: date-time
+            example: 2023-01-15:00:00:00+00
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Reminders"
+        "500":
+          description: Invalid request. The request body is missing or malformed.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /reminder/filter/{text}:
+    get:
+      summary: GET filtered reminders list based on path variable text
+      description: GET filtered reminders list based on path variable text
+      parameters:
+        - name: text
+          in: path
+          required: true
+          description: reminder ID
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Reminders"
+        "500":
+          description: Invalid request. The request body is missing or malformed.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+components:
+  schemas:
+    Reminders:
+      type: array
+      items:
+        $ref: "#/components/schemas/Reminder"
+    Reminder:
+      type: object
+      properties:
+        _id:
+          type: object
+          description: unique ID of the reminder object
+          example: 234dfsdufhalsdkfjasd
+        title:
+          type: string
+          description: title of the reminder
+          example: REMINDER title
+        description:
+          type: string
+          description: content of the reminder
+          example: Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+        createdDate:
+          type: string
+          format: date-time
+          description: date reminder was created
+          example: 2023-01-15:00:00:00+00
+        completed:
+          type: boolean
+          description: completed status
+          example: true
+        lastModifiedDate:
+          type: string
+          format: date-time
+          description: date reminder was last modified
+          example: 2023-01-15:00:00:00+00
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+      example:
+        code: 500
+        message: "Reminder not found"
